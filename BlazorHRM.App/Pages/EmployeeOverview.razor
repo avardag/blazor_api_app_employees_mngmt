@@ -1,0 +1,45 @@
+@page "/employeeoverview"
+@using BlazorHRM.Shared.Domain
+@using BlazorHRM.App.Services
+
+<h2>Employee Overview</h2>
+
+@if (Employees is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-light">
+        <thead class="table-primary">
+        <tr>
+            <th></th>
+            <th>Employee ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var employee in Employees)
+        {
+            <tr>
+                <td><img src="@($"/images/{employee.FirstName.ToLower()}_profile.jpg")" class="rounded-circle " width="64px" /></td>
+                <td>@employee.EmployeeId</td>
+                <td>@employee.FirstName</td>
+                <td>@employee.LastName</td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+}
+
+@code {
+    public List<Employee>? Employees { get; set; } = default!;
+
+    protected override void OnInitialized()
+    {
+        Employees = MockDataService.Employees;
+    }
+
+}

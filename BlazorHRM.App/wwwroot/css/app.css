@@ -99,3 +99,76 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+
+/* Nav */
+.navbar-dark .navbar-nav .nav-link {
+    color: #FFF;
+}
+
+.nav-link.btn-link {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.nav-item, .nav-link {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #FFF;
+    margin-left: 20px;
+}
+
+/* Nav: sidebar */
+.sidebar {
+    margin-top: 70px;
+    width: 240px;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
+}
+
+.list-group-item.active {
+    color: #C87D52;
+}
+
+#page-content-wrapper {
+    width: calc(100vw - 260px);
+    padding-top: 25px;
+    margin-top: 70px;
+}
+
+/* Employee-card */
+.employee-card {
+    border: none;
+    background-color: #FFF !important;
+}
+
+.employee-link {
+    text-decoration: none;
+}
+
+.employee-img {
+    max-width: 200px;
+}
+
+/* Employee-quick-view */
+.close {
+    border: none;
+    background-color: #FFF;
+}
+
+/* Employee detail */
+.employee-map {
+    width: 350px;
+    height: 500px;
+    flex-shrink: 0;
+}
+
+.employee-detail, .employee-edit {
+    padding: 15px;
+    background-color: #FFF !important;
+}
