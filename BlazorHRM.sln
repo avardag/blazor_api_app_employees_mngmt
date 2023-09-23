@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHRM.App", "BlazorHRM.App\BlazorHRM.App.csproj", "{88FF61F0-2A1F-4AF1-B404-B189BA0998CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHRM.Shared", "BlazorHRM.Shared\BlazorHRM.Shared.csproj", "{EE7C920C-7196-4FF1-9B6F-049102374BCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88FF61F0-2A1F-4AF1-B404-B189BA0998CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FF61F0-2A1F-4AF1-B404-B189BA0998CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FF61F0-2A1F-4AF1-B404-B189BA0998CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FF61F0-2A1F-4AF1-B404-B189BA0998CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
