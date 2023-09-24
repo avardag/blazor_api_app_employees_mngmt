@@ -1,7 +1,19 @@
 ﻿@page "/"
+@using BlazorHRM.App.Components.Widgets
 
 <PageTitle>TabSpace home</PageTitle>
 
 <h1>Welcome to TabSpace!</h1>
 
 <h3>lorem ipsum dolor sit amet, consectetur adip e parturient mont et parturient in  Lorem ipsum  </h3>
+
+@foreach (var widgetType in Widgets)
+{
+    <DynamicComponent Type="widgetType" />
+}
+
+@code{
+
+    public List<Type> Widgets { get; set; } = new List<Type>() { typeof(EmployeeCountWidget), typeof(InboxWidget) };
+
+}

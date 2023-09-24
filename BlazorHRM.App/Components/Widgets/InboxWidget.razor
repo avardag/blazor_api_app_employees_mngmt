@@ -1,0 +1,23 @@
+<div class="card my-3" style="max-width: 36rem;">
+    <div class="card-body">
+        <h5 class="card-title">Inbox</h5>
+        @if (@MessageCount > 0)
+        {
+            <h4 class="card-text">You currently have @MessageCount questions from employees!</h4>
+        }
+        else
+        {
+            <p class="card-text">No questions from employees! All good!</p>
+        }
+    </div>
+</div>
+
+
+@code {
+    public int MessageCount { get; set; } = 0;
+
+    protected override void OnInitialized()
+    {
+        MessageCount = new Random().Next(10);
+    }
+}

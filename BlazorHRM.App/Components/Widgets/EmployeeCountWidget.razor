@@ -1,0 +1,17 @@
+@using BlazorHRM.App.Services
+
+<div class="card my-3" style="max-width: 36rem;">
+    <div class="card-body">
+        <h5 class="card-title">Employee Counter</h5>
+        There are currently @EmployeeCounter employees working at BlazorHRM
+    </div>
+</div>
+
+@code {
+    public int EmployeeCounter { get; set; }
+
+    protected override void OnInitialized()
+    {
+        EmployeeCounter = MockDataService.Employees.Count;
+    }
+}
