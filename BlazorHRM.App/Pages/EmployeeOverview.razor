@@ -15,10 +15,14 @@ else
         @foreach (var empl in Employees)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <EmployeeCard 
-                    Employee="empl" 
-                    EmployeeQuickViewClicked="HandleEmployeeQuickViewClicked"
-                    />
+                <ErrorBoundary>
+                    <ChildContent>
+                        <EmployeeCard Employee="empl"  EmployeeQuickViewClicked="HandleEmployeeQuickViewClicked" />
+                    </ChildContent>
+                    <ErrorContent>
+                        <p class="errorUI text-center">Invalid Employee</p>
+                    </ErrorContent>
+                </ErrorBoundary>
             </div>
         }
     </div>

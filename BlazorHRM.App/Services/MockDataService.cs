@@ -70,8 +70,30 @@ public class MockDataService
                 Country = _countries[1],
                 CountryId = _countries[1].CountryId
             };
+            var e3 = new Employee
+            {
+                MaritalStatus = MaritalStatus.Married,
+                BirthDate = new DateTime(1984, 11, 3),
+                City = "London",
+                Email = "zahir@gmail.com",
+                EmployeeId = 2,
+                FirstName = "Zahir",
+                LastName = "",
+                Gender = Gender.Male,
+                PhoneNumber = "0704329876",
+                Smoker = false,
+                Street = "Kings Str 10",
+                Zip = "293845",
+                JobCategory = _jobCategories[7],
+                JobCategoryId = _jobCategories[7].JobCategoryId,
+                Comment = "Lorem Ipsum",
+                ExitDate = null,
+                JoinedDate = new DateTime(2023, 12, 22),
+                Country = _countries[6],
+                CountryId = _countries[6].CountryId
+            };
 
-            return new List<Employee>() { e1, e2 };
+            return new List<Employee>() { e1, e2, e3 };
         }
 
         private static List<JobCategory> InitializeMockJobCategories()
