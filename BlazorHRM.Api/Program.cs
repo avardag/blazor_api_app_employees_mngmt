@@ -43,10 +43,16 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+// used with Microsoft.AspNetCore.Components.WebAssembly.Server nuget package
+if (app.Environment.IsDevelopment())
+{
+    app.UseWebAssemblyDebugging();
+}
 
 app.UseHttpsRedirection();
 // Configures the application to serve Blazor WebAssembly framework files from the root path "/".
 app.UseBlazorFrameworkFiles();
+//necessary, blazor wasm will be served as static files
 app.UseStaticFiles();
 
 app.UseAuthorization();

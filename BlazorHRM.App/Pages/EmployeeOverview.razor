@@ -1,6 +1,9 @@
 @page "/employeeoverview"
 @using BlazorHRM.Shared.Domain
 @using BlazorHRM.App.Services
+@* @inject HttpClient HttpClient //use httpFactory instead *@
+@* @using System.Net.Http.Json //use httpFactory instead *@
+@inject IEmployeeDataService EmployeeDataService
 
 <PageTitle>@Title</PageTitle>
 <h2>@Title</h2>
@@ -33,10 +36,17 @@ else
     public string Title = "Employee Overview";
     public List<Employee>? Employees { get; set; } = default!;
     private Employee? _selectedEmployee;
+    // [Inject]
+    // public IEmployeeDataService? EmployeeDataService { get; set; }
 
-    protected override void OnInitialized()
+    //use httpFactory instead
+    // protected async override Task OnInitializedAsync() 
+    // {
+    //     Employees = await HttpClient.GetFromJsonAsync<List<Employee>>("https://localhost:7229/api/employee");
+    // }
+    protected override async Task OnInitializedAsync()
     {
-        Employees = MockDataService.Employees;
+        Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
     }
 
     public void HandleEmployeeQuickViewClicked(Employee selectedEmployee)

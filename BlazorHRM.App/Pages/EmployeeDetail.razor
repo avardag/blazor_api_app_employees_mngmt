@@ -1,6 +1,7 @@
 @page "/employeedetail/{EmployeeId}"
 @using BlazorHRM.Shared.Domain
 @using BlazorHRM.App.Services
+@inject IEmployeeDataService EmployeeDataService
 
 <PageTitle>Details: @Employee.FirstName @Employee.LastName</PageTitle>
 
@@ -112,8 +113,8 @@
 
     public Employee? Employee { get; set; } = new Employee();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Employee = MockDataService.Employees.FirstOrDefault(e => e.EmployeeId == int.Parse(EmployeeId));
+        Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
     }
 }
