@@ -142,10 +142,6 @@ a, .btn-link {
 }
 
 /* Employee-card */
-.employee-card {
-    border: none;
-    background-color: #FFF !important;
-}
 
 .employee-link {
     text-decoration: none;

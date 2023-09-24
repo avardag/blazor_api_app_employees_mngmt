@@ -10,11 +10,15 @@
 }
 else
 {
+    <QuickViewPopup Employee="_selectedEmployee" />
     <div class="row">
         @foreach (var empl in Employees)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <EmployeeCard Employee="empl" />
+                <EmployeeCard 
+                    Employee="empl" 
+                    EmployeeQuickViewClicked="@(()=>ShowQuickViewPopup(empl))"
+                    />
             </div>
         }
     </div>
@@ -22,10 +26,15 @@ else
 
 @code {
     public List<Employee>? Employees { get; set; } = default!;
+    private Employee? _selectedEmployee;
 
     protected override void OnInitialized()
     {
         Employees = MockDataService.Employees;
     }
 
+    public void ShowQuickViewPopup(Employee selectedEmployee)
+    {
+        _selectedEmployee = selectedEmployee;
+    }
 }

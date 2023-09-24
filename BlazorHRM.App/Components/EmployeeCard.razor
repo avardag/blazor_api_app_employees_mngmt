@@ -1,15 +1,19 @@
 @using BlazorHRM.Shared.Domain
 <h3>EmployeeCard</h3>
 <div class="col">
-    <div class="card rounded-3 employee-card" style="width: 18rem;">
+    <div class="card rounded-3" style="width: 18rem;">
         <div class="card-header py-3">
             <h4>@Employee.FirstName @Employee.LastName</h4>
         </div>
-        <div class="card-body employee-card text-center">
+        <div class="card-body text-center">
             <div class="mb-3">
                 <img src="@($"images/{Employee.FirstName.ToLower()}_profile.jpg")" class="employee-img rounded-circle"/>
-                @* <img src="@($"/images/{Employee.FirstName.ToLower()}_profile.jpg")}" class="employee-img"/> *@
-                </div>
+            </div>
+            <button
+                class="btn btn-primary btn-sm mb-1"
+                @onclick="@(async()=> await EmployeeQuickViewClicked.InvokeAsync(Employee))">
+                Quick View
+            </button>
         </div>
     </div> 
 </div>
@@ -17,4 +21,6 @@
 @code {
     [Parameter]
     public Employee Employee { get; set; } = default!;
+    [Parameter]
+    public EventCallback<Employee> EmployeeQuickViewClicked { get; set; }
 }
