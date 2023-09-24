@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHRM.App", "BlazorHRM.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHRM.Shared", "BlazorHRM.Shared\BlazorHRM.Shared.csproj", "{EE7C920C-7196-4FF1-9B6F-049102374BCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHRM.Api", "BlazorHRM.Api\BlazorHRM.Api.csproj", "{5D9E576E-1951-4283-B8B6-3864C0DC54C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE7C920C-7196-4FF1-9B6F-049102374BCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9E576E-1951-4283-B8B6-3864C0DC54C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9E576E-1951-4283-B8B6-3864C0DC54C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9E576E-1951-4283-B8B6-3864C0DC54C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9E576E-1951-4283-B8B6-3864C0DC54C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
