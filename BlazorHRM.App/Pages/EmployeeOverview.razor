@@ -17,7 +17,7 @@ else
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                 <EmployeeCard 
                     Employee="empl" 
-                    EmployeeQuickViewClicked="@(()=>ShowQuickViewPopup(empl))"
+                    EmployeeQuickViewClicked="HandleEmployeeQuickViewClicked"
                     />
             </div>
         }
@@ -33,7 +33,7 @@ else
         Employees = MockDataService.Employees;
     }
 
-    public void ShowQuickViewPopup(Employee selectedEmployee)
+    public void HandleEmployeeQuickViewClicked(Employee selectedEmployee)
     {
         _selectedEmployee = selectedEmployee;
     }

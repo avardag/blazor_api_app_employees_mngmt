@@ -1,4 +1,6 @@
 @using BlazorHRM.Shared.Domain
+@inject NavigationManager NavManager
+
 <h3>EmployeeCard</h3>
 <div class="col">
     <div class="card rounded-3" style="width: 18rem;">
@@ -14,6 +16,11 @@
                 @onclick="@(async()=> await EmployeeQuickViewClicked.InvokeAsync(Employee))">
                 Quick View
             </button>
+            @* <a href="@($"employeedetail/{Employee.EmployeeId}")" class="btn btn-outline-primary">Full details</a> *@
+            <button class="btn btn-outline-primary"
+                    @onclick="(() => NavigateToDetails(Employee))">
+                Full details
+            </button>
         </div>
     </div> 
 </div>
@@ -23,4 +30,10 @@
     public Employee Employee { get; set; } = default!;
     [Parameter]
     public EventCallback<Employee> EmployeeQuickViewClicked { get; set; }
+    // [Inject]
+    // public NavigationManager NavManager { get; set; } = default!;
+    public void NavigateToDetails(Employee employee)
+    {
+        NavManager.NavigateTo($"employeedetail/{employee.EmployeeId}");
+    }
 }
