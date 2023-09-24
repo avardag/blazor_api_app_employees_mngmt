@@ -1,0 +1,12 @@
+@inject AppState AppState
+<h3>@MessageCount message(s)</h3>
+
+@code {
+    private int MessageCount;
+
+    protected override void OnInitialized()
+    {
+        MessageCount = new Random().Next(10);
+        AppState.NumberOfMessages = MessageCount;
+    }
+}
