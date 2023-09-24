@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using BlazorHRM.App;
@@ -14,5 +15,7 @@ builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client
     client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
 builder.Services.AddSingleton<AppState>();
+
+builder.Services.AddBlazoredLocalStorage();
 
 await builder.Build().RunAsync();

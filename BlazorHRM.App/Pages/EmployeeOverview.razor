@@ -46,7 +46,7 @@ else
     // }
     protected override async Task OnInitializedAsync()
     {
-        Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
+        Employees = (await EmployeeDataService.GetAllEmployees(true)).ToList();
     }
 
     public void HandleEmployeeQuickViewClicked(Employee selectedEmployee)
