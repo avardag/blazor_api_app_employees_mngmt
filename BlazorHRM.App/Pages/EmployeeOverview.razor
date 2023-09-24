@@ -2,7 +2,8 @@
 @using BlazorHRM.Shared.Domain
 @using BlazorHRM.App.Services
 
-<h2>Employee Overview</h2>
+<PageTitle>@Title</PageTitle>
+<h2>@Title</h2>
 
 @if (Employees is null)
 {
@@ -29,6 +30,7 @@ else
 }
 
 @code {
+    public string Title = "Employee Overview";
     public List<Employee>? Employees { get; set; } = default!;
     private Employee? _selectedEmployee;
 
