@@ -13,6 +13,10 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 //using httpfactory instead, using Microsoft.Extensions.Http nuget
 builder.Services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
     client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+builder.Services.AddHttpClient<ICountryDataService, CountryDataService>(client =>
+    client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+builder.Services.AddHttpClient<IJobCategoryDataService, JobCategoryDataService>(client =>
+    client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
 builder.Services.AddSingleton<AppState>();
 
