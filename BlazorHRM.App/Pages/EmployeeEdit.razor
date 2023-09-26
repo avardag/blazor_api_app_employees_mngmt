@@ -11,6 +11,8 @@
   <section class="employee-edit">
       <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
       <EditForm Model="@Employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+          <DataAnnotationsValidator/>  
+          <ValidationSummary/>  
           @if (Employee.EmployeeId == 0)
           {
               <div class="row mb-3">
@@ -18,13 +20,14 @@
                   <div class="col-md-8">
                       <InputFile OnChange="OnInputFileChange"></InputFile>
                   </div>
-              </div> 
+              </div>
           }
           <div class="row mb-3">
               <label for="lastName" class="col-form-label col-md-3">Last name: </label>
               <div class="col-md-8">
                   <InputText @bind-Value="@Employee.LastName" id="lastName" class="form-control col-md-8" placeholder="Enter last name"></InputText>
               </div>
+              <ValidationMessage class="offset-md-3 col-md-8" For="@(()=> Employee.LastName)" />
           </div>
 
           <div class="row mb-3">
@@ -32,6 +35,7 @@
               <div class="col-md-8">
                   <InputText @bind-Value="@Employee.FirstName" id="firstName" class="form-control col-md-8" placeholder="Enter first name"></InputText>
               </div>
+              <ValidationMessage class="offset-md-3 col-md-8" For="@(()=> Employee.FirstName)" />
           </div>
 
           <div class="row mb-3">
@@ -46,6 +50,7 @@
               <div class="col-md-8">
                   <InputText @bind-Value="@Employee.Email" id="email" class="form-control col-md-8" placeholder="Enter email"></InputText>
               </div>
+              <ValidationMessage class="offset-md-3 col-md-8" For="@(()=> Employee.Email)" />
           </div>
 
           <div class="row mb-3">
@@ -166,6 +171,7 @@
               <div class="col-md-8">
                   <InputTextArea id="comment" class="form-control" @bind-Value="@Employee.Comment" placeholder="Enter comment"></InputTextArea>
               </div>
+              <ValidationMessage class="offset-md-3 col-md-8" For="@(()=> Employee.Comment)" />
           </div>
           <button type="submit" class="btn btn-primary me-1">Save Employee</button>
           @if (Employee.EmployeeId > 0)
