@@ -9,7 +9,8 @@
         </div>
         <div class="card-body text-center">
             <div class="mb-3">
-                <img src="@($"images/{Employee.FirstName.ToLower()}_profile.jpg")" class="employee-img rounded-circle"/>
+                @* <img src="@($"images/{Employee.FirstName.ToLower()}_profile.jpg")" class="employee-img rounded-circle"/> *@
+                <img src="@Employee.ImageName" class="employee-img rounded-circle"/>
             </div>
             <button
                 class="btn btn-primary btn-sm mb-1"

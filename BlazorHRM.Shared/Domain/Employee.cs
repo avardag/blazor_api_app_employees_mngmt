@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace BlazorHRM.Shared.Domain;
 
 public class Employee
@@ -25,4 +27,7 @@ public class Employee
 
     public double? Latitude { get; set; }
     public double? Longitude { get; set; }
+    [NotMapped] //Denotes that a property or class should be excluded from database mapping
+    public byte[]? ImageContent { get; set; }
+    public string? ImageName { get; set; }
 }
